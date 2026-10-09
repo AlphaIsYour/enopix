@@ -1,0 +1,64 @@
+name: 🐛 Bug Report
+description: Report an issue, broken tool, or unexpected behavior.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this issue! Please provide as much context as possible.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Description
+      description: What is happening? Be specific.
+      placeholder: "e.g., When resizing a 4K PNG with 'maintain aspect ratio' enabled, the preview canvas distorts."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Exact steps to reproduce the issue.
+      placeholder: |
+        1. Go to '/tools/resize'
+        2. Upload an image
+        3. Change width to 1200
+        4. Click 'Process'
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should happen instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: Current Behavior
+      description: What actually happens? (Include error messages or screenshots if available)
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser version, OS, etc.
+      placeholder: "Chrome 125, macOS Sonoma / Windows 11"
+    validations:
+      required: false
+
+  - type: textarea
+    id: possible_fix
+    attributes:
+      label: Possible Approach / Solution
+      description: Do you have a recommended fix or relevant files in mind?
+    validations:
+      required: false

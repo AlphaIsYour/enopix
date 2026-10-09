@@ -116,6 +116,38 @@ export default function GridSplitPage() {
                 </div>
               </div>
 
+              {/* Gap & Padding */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <div className="flex items-center justify-between mb-1.5">
+                    <label className="text-sm font-medium">Tile Gap</label>
+                    <span className="text-xs font-mono text-muted-foreground">{options.gap}px</span>
+                  </div>
+                  <input
+                    type="range"
+                    min={0}
+                    max={100}
+                    value={options.gap}
+                    onChange={(e) => setOptions((o) => ({ ...o, gap: Number(e.target.value) }))}
+                    className="w-full"
+                  />
+                </div>
+                <div>
+                  <div className="flex items-center justify-between mb-1.5">
+                    <label className="text-sm font-medium">Outer Padding</label>
+                    <span className="text-xs font-mono text-muted-foreground">{options.padding}px</span>
+                  </div>
+                  <input
+                    type="range"
+                    min={0}
+                    max={100}
+                    value={options.padding}
+                    onChange={(e) => setOptions((o) => ({ ...o, padding: Number(e.target.value) }))}
+                    className="w-full"
+                  />
+                </div>
+              </div>
+
               {/* Preview grid */}
               <div>
                 <label className="block text-sm font-medium mb-2">Preview</label>

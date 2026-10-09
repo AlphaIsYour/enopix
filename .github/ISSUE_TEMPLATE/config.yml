@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Ask Questions & General Support
+    url: https://github.com/AlphaIsYour/youralpha-10-eno-image-tools/discussions
+    about: Please ask questions and get help regarding setup or image manipulation logic here.
+  - name: ☕ Support Development
+    url: https://buymeacoffee.com/enoalph
+    about: Support ongoing maintenance and hosting of Eno Image Tools.

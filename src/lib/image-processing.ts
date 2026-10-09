@@ -286,9 +286,15 @@ export async function splitImageGrid(
 ): Promise<ProcessedImage[]> {
   const img = await imageFromDataUrl(imageFile.dataUrl);
   const { rows, cols, backgroundColor } = options;
+  const gap = Math.max(0, options.gap || 0);
+  const padding = Math.max(0, options.padding || 0);
 
-  const cellWidth = Math.floor(img.width / cols);
-  const cellHeight = Math.floor(img.height / rows);
+  const totalGapW = Math.max(0, (cols - 1) * gap);
+  const totalGapH = Math.max(0, (rows - 1) * gap);
+  const availableWidth = img.width - 2 * padding - totalGapW;
+  const availableHeight = img.height - 2 * padding - totalGapH;
+  const cellWidth = Math.max(1, Math.floor(availableWidth / cols));
+  const cellHeight = Math.max(1, Math.floor(availableHeight / rows));
   const results: ProcessedImage[] = [];
 
   for (let r = 0; r < rows; r++) {
@@ -303,10 +309,13 @@ export async function splitImageGrid(
         ctx.fillRect(0, 0, cellWidth, cellHeight);
       }
 
+      const sx = padding + c * (cellWidth + gap);
+      const sy = padding + r * (cellHeight + gap);
+
       ctx.drawImage(
         img,
-        c * cellWidth,
-        r * cellHeight,
+        sx,
+        sy,
         cellWidth,
         cellHeight,
         0,
@@ -317,7 +326,7 @@ export async function splitImageGrid(
 
       const blob = await canvasToBlob(canvas, imageFile.type, 0.95);
       const ext = getFileExtension(imageFile.name);
-      const baseName = imageFile.name.replace(`.${ext}`, '');
+      const baseName = imageFile.name.replace(/\.[^.]+$/, '');
       const newName = `${baseName}_${r + 1}-${c + 1}.${ext}`;
 
       results.push({
@@ -349,6 +358,10 @@ export async function generateSocialPreset(
   canvas.width = targetWidth;
   canvas.height = targetHeight;
   const ctx = canvas.getContext('2d')!;
+
+  // Default white background for JPEG output to prevent black artifacts on transparent inputs
+  ctx.fillStyle = '#FFFFFF';
+  ctx.fillRect(0, 0, targetWidth, targetHeight);
 
   // Smart cover-fit: fill canvas while maintaining aspect ratio
   const sourceRatio = img.width / img.height;
@@ -417,10 +430,16 @@ export async function generateFavicons(
 
     ctx.drawImage(img, padding, padding, innerSize, innerSize);
 
-    const mimeType = options.format === 'ico' ? 'image/png' : 'image/png';
-    const blob = await canvasToBlob(canvas, mimeType, 1);
+    const isIco = options.format === 'ico';
+    const mimeType = isIco ? 'image/x-icon' : 'image/png';
+    let blob: Blob;
+    try {
+      blob = await canvasToBlob(canvas, mimeType, 1);
+    } catch {
+      blob = await canvasToBlob(canvas, 'image/png', 1);
+    }
     const baseName = imageFile.name.replace(/\.[^.]+$/, '');
-    const newName = `${baseName}-${size}x${size}.png`;
+    const newName = isIco ? `${baseName}-${size}x${size}.ico` : `${baseName}-${size}x${size}.png`;
 
     results.push({
       id: generateId(),

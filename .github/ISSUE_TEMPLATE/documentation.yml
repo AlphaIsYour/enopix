@@ -1,0 +1,26 @@
+name: 📖 Documentation Improvement
+description: Suggest improvements, report typos, or add missing guides.
+title: "[Docs]: "
+labels: ["documentation", "good first issue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Clear and welcoming documentation is the backbone of a great open source project.
+
+  - type: textarea
+    id: issue_description
+    attributes:
+      label: What part of the documentation needs improvement?
+      description: Provide URLs, file paths, or section names.
+      placeholder: "e.g., The README installation guide doesn't explain how to run unit tests..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_changes
+    attributes:
+      label: Proposed Changes
+      description: What should the documentation say instead?
+    validations:
+      required: true

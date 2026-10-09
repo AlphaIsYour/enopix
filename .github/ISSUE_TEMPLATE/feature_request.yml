@@ -1,0 +1,53 @@
+name: 💡 Feature or Improvement Request
+description: Propose a new tool, enhancement, or optimization.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We love new ideas! Please remember that all image processing in Eno Image Tools must stay **100% client-side** (zero server uploads).
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement / Motivation
+      description: What problem does this solve, or what need does it address?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Proposed Solution
+      description: Describe the feature, user workflow, and how it fits into the project.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Any alternative designs, libraries, or approaches you explored?
+    validations:
+      required: false
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: What defines this feature as successfully implemented?
+      placeholder: "- [ ] User can...\n- [ ] Canvas outputs valid..."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: contribution
+    attributes:
+      label: Would you be willing to submit a PR for this?
+      options:
+        - "Yes, I'd like to implement this myself!"
+        - "I can help with testing and feedback."
+        - "No, opening for discussion/contributors."
+    validations:
+      required: true

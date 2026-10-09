@@ -1,171 +1,209 @@
 # Eno Image Tools
 
-A privacy-first, browser-based image processing suite. Resize, crop, compress, convert, strip metadata, split into grids, generate social media presets, create favicon packages, and compare before/after — all processed locally on your device. Zero uploads.
+<div align="center">
 
-## Features
+[![CI](https://github.com/AlphaIsYour/eno-image-tools/actions/workflows/ci.yml/badge.svg)](https://github.com/AlphaIsYour/eno-image-tools/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38bdf8?logo=tailwindcss)](https://tailwindcss.com/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
+**A privacy-first, browser-based image processing suite.**  
+Resize, crop, compress, convert, strip metadata, split into grids, generate social media presets, create favicon packages, and compare before/after — all processed locally on your device. **Zero server uploads. 100% private.**
+
+[Features](#features) • [Quick Start](#getting-started) • [Architecture](#how-it-works) • [Roadmap](#roadmap) • [Contributing](#contributing) • [Support](#support)
+
+</div>
+
+---
+
+## ⚡ Features
 
 ### Core Tools
 
-| Tool | Description |
-|------|-------------|
-| **Resize** | Scale by exact pixels, percentage, or max dimensions with aspect ratio lock |
-| **Crop** | Interactive crop area with drag positioning and aspect ratio presets |
-| **Compress** | Reduce file size with quality slider for JPEG, WebP, and PNG |
-| **Convert Format** | Transform between PNG, JPEG, WebP, AVIF, and BMP |
-| **Remove Metadata** | Strip EXIF/GPS data to protect privacy before sharing |
-| **Grid Split** | Divide images into grids (2×2, 3×3, custom) for carousels and puzzles |
-| **Social Media Presets** | Auto-resize for Instagram, Twitter, Facebook, LinkedIn, YouTube, Pinterest, TikTok, and more |
-| **Favicon Generator** | Generate all required favicon sizes (16px to 512px) with padding and border radius controls |
-| **Before / After Compare** | Interactive slider comparison between original and processed images |
+| Tool | Route | Description |
+|------|-------|-------------|
+| **Resize** | `/tools/resize` | Scale by exact pixels, percentage, or max dimensions with aspect ratio lock |
+| **Crop** | `/tools/crop` | Interactive crop area with drag positioning and aspect ratio presets |
+| **Compress** | `/tools/compress` | Reduce file size with quality slider for JPEG, WebP, and PNG |
+| **Convert Format** | `/tools/convert` | Transform between PNG, JPEG, WebP, AVIF, and BMP |
+| **Remove Metadata** | `/tools/metadata` | Strip EXIF/GPS data to protect privacy before sharing |
+| **Grid Split** | `/tools/grid-split` | Divide images into grids (2×2, 3×3, custom) for carousels and puzzles |
+| **Social Media Presets** | `/tools/social-presets` | Auto-resize for Instagram, Twitter, Facebook, LinkedIn, YouTube, Pinterest, TikTok, and more |
+| **Favicon Generator** | `/tools/favicon` | Generate all required favicon sizes (16px to 512px) with padding and border radius controls |
+| **Before / After Compare** | `/tools/compare` | Interactive slider comparison between original and processed images |
 
 ### Key Capabilities
 
-- **100% local processing** — uses Canvas API, nothing leaves your browser
-- **Batch processing** — upload and process multiple images at once
-- **Drag-and-drop** — drop files directly onto the page
-- **ZIP download** — download all processed images as a single ZIP file
-- **Progress indicators** — see real-time progress during batch operations
-- **Responsive design** — works on desktop, tablet, and mobile
-- **Dark mode** — automatic dark/light theme based on system preference
+- **100% local processing** — uses HTML5 Canvas API and Blob API; nothing leaves your browser.
+- **Batch processing** — upload and process multiple images concurrently.
+- **Drag-and-drop** — drop files directly onto the page.
+- **ZIP download** — package and download all processed images as a single ZIP file.
+- **Progress indicators** — real-time progress during batch operations.
+- **Responsive design** — seamless experience on desktop, tablet, and mobile.
+- **Dark mode** — automatic theme adaptation based on system preference.
 
-## Tech Stack
+---
 
-- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router with Turbopack)
+- **Language**: [TypeScript 5](https://www.typescriptlang.org/)
 - **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
 - **Icons**: [Lucide React](https://lucide.dev/)
-- **File handling**: [react-dropzone](https://react-dropzone.js.org/)
-- **ZIP export**: [JSZip](https://stuk.github.io/jszip/)
-- **Comparison slider**: Custom-built with React
+- **File Handling**: [react-dropzone](https://react-dropzone.js.org/)
+- **ZIP Export**: [JSZip](https://stuk.github.io/jszip/)
+- **Comparison Slider**: Custom React component
 
-## Getting Started
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js 18+
-- npm, yarn, pnpm, or bun
+- [Node.js](https://nodejs.org/) 18.0.0 or higher
+- npm, pnpm, yarn, or bun
 
 ### Installation
 
 ```bash
 # Clone the repository
-git clone <repository-url>
-cd 10-eno-image-tools
+git clone https://github.com/AlphaIsYour/eno-image-tools.git
+cd eno-image-tools
 
 # Install dependencies
-npm install
+npm ci
 
-# Start development server
+# Start local development server
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Build for Production
+### Verification & Scripts
 
-```bash
-npm run build
-npm start
-```
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start Next.js development server |
+| `npm run build` | Build optimized production bundle |
+| `npm run start` | Start production server |
+| `npm run lint` | Run ESLint check |
+| `npm run type-check` | Run TypeScript compiler check without emitting files |
 
-## Project Structure
+---
+
+## 🏗️ Project Structure
 
 ```
 src/
 ├── app/
 │   ├── layout.tsx          # Root layout with header/footer
-│   ├── page.tsx            # Homepage with tool grid
-│   ├── globals.css         # Design tokens and global styles
-│   └── tools/
-│       ├── resize/         # Resize tool page
-│       ├── crop/           # Crop tool page
-│       ├── compress/       # Compress tool page
-│       ├── convert/        # Format converter page
-│       ├── metadata/       # Metadata stripper page
-│       ├── grid-split/     # Grid split tool page
-│       ├── social-presets/ # Social media presets page
-│       ├── favicon/        # Favicon generator page
-│       └── compare/        # Before/after comparison page
+│   ├── page.tsx            # Homepage with tool showcase grid
+│   ├── globals.css         # Design tokens and global CSS
+│   └── tools/              # Dedicated tool pages
+│       ├── resize/         # Scale & dimension options
+│       ├── crop/           # Interactive crop canvas
+│       ├── compress/       # Quality compression controls
+│       ├── convert/        # Multi-format transformation
+│       ├── metadata/       # EXIF/GPS cleaner
+│       ├── grid-split/     # Tile & carousel splitter
+│       ├── social-presets/ # Platform-specific presets
+│       ├── favicon/        # Favicon bundle generator
+│       └── compare/        # Before/after comparison slider
 ├── components/
-│   ├── Header.tsx          # Navigation header
-│   ├── Footer.tsx          # Footer with privacy badge
-│   ├── FileDropzone.tsx    # Drag-and-drop file upload
-│   ├── ImageUploader.tsx   # Image upload with preview
-│   ├── ImagePreview.tsx    # Single image preview card
-│   ├── ProcessedResults.tsx# Results grid with download
-│   ├── ProgressBar.tsx     # Processing progress indicator
-│   ├── CompareSlider.tsx   # Before/after slider
-│   ├── ToolCard.tsx        # Homepage tool cards
-│   └── ToolLayout.tsx      # Tool page layout wrapper
+│   ├── Header.tsx          # Navigation bar with responsive menu
+│   ├── Footer.tsx          # Footer with privacy notice
+│   ├── FileDropzone.tsx    # Drag-and-drop file upload zone
+│   ├── ImageUploader.tsx   # Multi-file preview & queue list
+│   ├── ImagePreview.tsx    # Single image thumbnail card
+│   ├── ProcessedResults.tsx# Output grid with ZIP/single download
+│   ├── ProgressBar.tsx     # Batch operation progress indicator
+│   ├── CompareSlider.tsx   # Interactive split-view slider
+│   ├── ToolCard.tsx        # Homepage tool link cards
+│   └── ToolLayout.tsx      # Consistent tool page layout wrapper
 └── lib/
-    ├── types.ts            # TypeScript interfaces
-    ├── utils.ts            # Utility functions
-    ├── constants.ts        # Tool definitions, social presets
-    └── image-processing.ts # All image processing functions
+    ├── types.ts            # TypeScript interfaces & types
+    ├── utils.ts            # Helper functions (cn, clamp, aspect ratio)
+    ├── constants.ts        # Tool definitions & platform presets
+    └── image-processing.ts # Canvas manipulation & blob functions
 ```
 
-## Scripts
+---
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
-| `npm start` | Start production server |
-| `npm run lint` | Run ESLint |
-
-## Deploy to Vercel
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-username/eno-image-tools)
-
-1. Push your code to GitHub
-2. Import the repository on [Vercel](https://vercel.com)
-3. Vercel auto-detects Next.js — no configuration needed
-4. Deploy
-
-No environment variables required. No database needed. Everything runs in the browser.
-
-## How It Works
+## 🔒 How It Works (Privacy & Architecture)
 
 All image processing uses the browser's **Canvas API** and **Blob API**:
 
-1. Images are loaded into memory via `FileReader` and `HTMLImageElement`
-2. Operations are performed by drawing to an off-screen `<canvas>`
-3. Results are exported as `Blob` objects via `canvas.toBlob()`
-4. Downloads use `URL.createObjectURL()` — no server round-trip
+1. Images are loaded into browser memory via `FileReader` and `HTMLImageElement`.
+2. Operations are performed by drawing to an off-screen `<canvas>`.
+3. Results are exported as `Blob` objects via `canvas.toBlob()`.
+4. Downloads use `URL.createObjectURL()` — completely bypassing server uploads.
 
-This means:
-- **No file size limits** from server upload constraints (limited only by browser memory)
-- **No privacy concerns** — images never leave your device
-- **Works offline** once the page is loaded
-- **Instant processing** — no network latency
+**Why this matters:**
+- **Zero server upload limits**: File sizes are constrained only by client device memory.
+- **Complete privacy**: Photos never traverse the internet.
+- **Offline ready**: Works without internet connectivity once loaded.
+- **Zero server latency**: Processing runs directly on hardware acceleration.
 
-## Browser Support
+---
 
-- Chrome 90+
-- Firefox 90+
-- Safari 15+
-- Edge 90+
+## 🗺️ Roadmap
 
-## Roadmap
+### Completed (v0.1.0)
+- [x] 9 core client-side tools (Resize, Crop, Compress, Convert, Metadata, Grid Split, Social Presets, Favicon, Compare)
+- [x] Batch processing and ZIP archive downloads
+- [x] Responsive layout with dark/light mode
+- [x] Automated CI workflow for build and lint validation
 
-- [ ] Undo/redo history per tool
-- [ ] Custom watermark overlay
-- [ ] Image rotation and flip
-- [ ] EXIF data viewer (read-only)
-- [ ] Animated GIF frame extraction
-- [ ] Color profile conversion
-- [ ] Keyboard shortcuts
-- [ ] PWA support for offline use
-- [ ] Drag-and-drop reordering in batch mode
+### In Progress / Planned
+- [ ] Mobile touch drag-and-resize support for the crop tool
+- [ ] Transparent background preservation option in format converter
+- [ ] White-background fill safeguard for JPEG exports with transparent inputs
+- [ ] Grid split custom gap and padding controls
 
-## Contributing
+### Help Wanted / Good First Issues
+- [ ] Automated unit test suite for `src/lib/image-processing.ts` and `src/lib/utils.ts`
+- [ ] EXIF data inspector (read-only table preview before stripping)
+- [ ] Image rotation (90°, 180°, 270°) and flip (horizontal/vertical)
+- [ ] Keyboard shortcuts for quick tool navigation
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+### Future Ideas
+- [ ] Web Worker / OffscreenCanvas processing for large batches (>20 images)
+- [ ] Progressive Web App (PWA) manifest and offline service worker
+- [ ] Custom text & image watermark overlay tool
 
-## License
+---
 
-MIT License. See [LICENSE](LICENSE) for details.
+## 🤝 Contributing
+
+Contributions of all kinds are welcome! Whether you are writing code, fixing documentation, reporting issues, or suggesting new presets:
+
+1. Read our [Contributing Guidelines](CONTRIBUTING.md) to get set up.
+2. Check out [`good first issue`](https://github.com/AlphaIsYour/eno-image-tools/labels/good%20first%20issue) issues to get started.
+3. Review our [Code of Conduct](CODE_OF_CONDUCT.md).
+
+---
+
+## 👥 Contributors
+
+Thank you to everyone who has contributed to this project!
+
+<!-- When contributors submit PRs, they will be listed here -->
+- [AlphaIsYour](https://github.com/AlphaIsYour) — Maintainer
+
+Want to see your name here? Check out [CONTRIBUTING.md](CONTRIBUTING.md) and pick up an issue!
+
+---
+
+## ☕ Support
+
+Eno Image Tools is completely free and open-source software. If this project helps you or saves you time, you can optionally support ongoing maintenance and feature development:
+
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Donate-yellow.svg?logo=buy-me-a-coffee)](https://buymeacoffee.com/enoalph)
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.

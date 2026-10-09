@@ -17,7 +17,7 @@ export default function ConvertPage() {
   const [options, setOptions] = useState<ConvertOptions>({
     format: 'webp',
     quality: 92,
-    backgroundColor: '#ffffff',
+    backgroundColor: '',
   });
 
   const handleProcess = useCallback(async () => {
@@ -99,8 +99,8 @@ export default function ConvertPage() {
                 </div>
               )}
 
-              {/* Background color for formats without transparency */}
-              {['jpeg', 'bmp'].includes(options.format) && (
+              {/* Background color settings */}
+              {['jpeg', 'bmp'].includes(options.format) ? (
                 <div>
                   <label className="block text-sm font-medium mb-2">Background Color</label>
                   <div className="flex items-center gap-3">
@@ -120,6 +120,36 @@ export default function ConvertPage() {
                   <p className="text-xs text-muted-foreground mt-1">
                     JPEG and BMP do not support transparency. Transparent areas will be filled with this color.
                   </p>
+                </div>
+              ) : (
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <label className="text-sm font-medium">Background Fill (Optional)</label>
+                    {options.backgroundColor ? (
+                      <button
+                        type="button"
+                        onClick={() => setOptions((o) => ({ ...o, backgroundColor: '' }))}
+                        className="text-xs text-primary hover:underline"
+                      >
+                        Keep Transparent
+                      </button>
+                    ) : (
+                      <span className="text-xs text-green-600 dark:text-green-400 font-medium">
+                        Preserving Transparency
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <input
+                      type="color"
+                      value={options.backgroundColor || '#ffffff'}
+                      onChange={(e) => setOptions((o) => ({ ...o, backgroundColor: e.target.value }))}
+                      className="h-10 w-14 rounded-lg border border-border cursor-pointer"
+                    />
+                    <span className="text-xs text-muted-foreground">
+                      {options.backgroundColor ? `Filled with ${options.backgroundColor}` : 'Click color to set solid background or leave transparent'}
+                    </span>
+                  </div>
                 </div>
               )}
 

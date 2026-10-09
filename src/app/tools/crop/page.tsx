@@ -85,24 +85,35 @@ export default function CropPage() {
     drawCanvas();
   }, [drawCanvas]);
 
-  const handleCanvasMouseDown = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    setDragging(true);
-    const rect = canvasRef.current!.getBoundingClientRect();
-    const realScale = images[0].width / canvasRef.current!.width;
-    const x = Math.max(0, Math.min((e.clientX - rect.left) * realScale, images[0].width - options.width));
-    const y = Math.max(0, Math.min((e.clientY - rect.top) * realScale, images[0].height - options.height));
+  const updateCropPosition = (clientX: number, clientY: number) => {
+    if (!images[0] || !canvasRef.current) return;
+    const rect = canvasRef.current.getBoundingClientRect();
+    const realScale = images[0].width / canvasRef.current.width;
+    const x = Math.max(0, Math.min((clientX - rect.left) * realScale, images[0].width - options.width));
+    const y = Math.max(0, Math.min((clientY - rect.top) * realScale, images[0].height - options.height));
     setOptions((o) => ({ ...o, x: Math.round(x), y: Math.round(y) }));
   };
 
+  const handleCanvasMouseDown = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    setDragging(true);
+    updateCropPosition(e.clientX, e.clientY);
+  };
+
   const handleCanvasMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    if (!dragging || !images[0] || !canvasRef.current) return;
-    const rect = canvasRef.current.getBoundingClientRect();
-    const realScale = images[0].width / canvasRef.current.width;
+    if (!dragging) return;
+    updateCropPosition(e.clientX, e.clientY);
+  };
 
-    const x = Math.max(0, Math.min((e.clientX - rect.left) * realScale, images[0].width - options.width));
-    const y = Math.max(0, Math.min((e.clientY - rect.top) * realScale, images[0].height - options.height));
+  const handleCanvasTouchStart = (e: React.TouchEvent<HTMLCanvasElement>) => {
+    if (e.touches[0]) {
+      setDragging(true);
+      updateCropPosition(e.touches[0].clientX, e.touches[0].clientY);
+    }
+  };
 
-    setOptions((o) => ({ ...o, x: Math.round(x), y: Math.round(y) }));
+  const handleCanvasTouchMove = (e: React.TouchEvent<HTMLCanvasElement>) => {
+    if (!dragging || !e.touches[0]) return;
+    updateCropPosition(e.touches[0].clientX, e.touches[0].clientY);
   };
 
   const handleCanvasMouseUp = () => {
@@ -152,11 +163,15 @@ export default function CropPage() {
               <div className="flex justify-center overflow-hidden rounded-lg bg-muted">
                 <canvas
                   ref={canvasRef}
-                  className="cursor-crosshair max-w-full"
+                  className="cursor-crosshair max-w-full touch-none"
                   onMouseDown={handleCanvasMouseDown}
                   onMouseMove={handleCanvasMouseMove}
                   onMouseUp={handleCanvasMouseUp}
                   onMouseLeave={handleCanvasMouseUp}
+                  onTouchStart={handleCanvasTouchStart}
+                  onTouchMove={handleCanvasTouchMove}
+                  onTouchEnd={handleCanvasMouseUp}
+                  onTouchCancel={handleCanvasMouseUp}
                 />
               </div>
 
