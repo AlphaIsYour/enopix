@@ -39,21 +39,9 @@ export function ToolCard({ tool, index = 0 }: ToolCardProps) {
   return (
     <Link
       href={`/tools/${tool.slug}`}
-      className={cn(
-        'group relative flex flex-col justify-between rounded-3xl border p-6 sm:p-7 backdrop-blur-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 animate-slide-up overflow-hidden shadow-sm',
-        tool.cardBg,
-        tool.cardBorder
-      )}
+      className="group relative flex flex-col justify-between rounded-3xl bg-white/90 backdrop-blur-xl border border-white/80 p-6 sm:p-7 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05),0_0_15px_rgba(255,255,255,0.9)_inset] hover:shadow-[0_12px_32px_-6px_rgba(68,172,255,0.18)] hover:border-[#89D4FF]/60 hover:-translate-y-1.5 transition-all duration-300 animate-slide-up overflow-hidden"
       style={{ animationDelay: `${index * 40}ms`, animationFillMode: 'backwards' }}
     >
-      {/* Top accent gradient indicator */}
-      <div
-        className={cn(
-          'absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r opacity-70 group-hover:opacity-100 transition-opacity duration-300',
-          tool.color
-        )}
-      />
-
       <div>
         <div className="flex items-center justify-between mb-4">
           <div
@@ -65,40 +53,25 @@ export function ToolCard({ tool, index = 0 }: ToolCardProps) {
             <Icon className="h-6 w-6 text-white drop-shadow-sm" />
           </div>
 
-          <span
-            className={cn(
-              'text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-xs',
-              tool.accentBadge
-            )}
-          >
+          <span className="text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider bg-slate-100/90 text-slate-600 border border-slate-200/60 shadow-xs">
             {tool.category}
           </span>
         </div>
 
-        <h3 className="text-xl font-extrabold mb-2 text-foreground group-hover:translate-x-0.5 transition-transform">
+        <h3 className="text-xl font-extrabold mb-2 text-slate-900 group-hover:text-[#44ACFF] group-hover:translate-x-0.5 transition-all">
           {tool.name}
         </h3>
 
-        <p className="text-sm text-foreground/80 leading-relaxed font-medium">
+        <p className="text-sm text-slate-600 leading-relaxed font-medium">
           {tool.description}
         </p>
       </div>
 
-      <div className="mt-6 pt-3.5 border-t border-black/8 flex items-center justify-between text-xs font-bold">
-        <span
-          className={cn(
-            'group-hover:translate-x-1 transition-transform duration-200',
-            tool.buttonText
-          )}
-        >
+      <div className="mt-6 flex items-center justify-between text-xs font-bold">
+        <span className="text-[#006BB8] group-hover:translate-x-1 transition-transform duration-200">
           Buka Tool
         </span>
-        <span
-          className={cn(
-            'flex h-7 w-7 items-center justify-center rounded-full transition-all duration-200 text-sm shadow-xs group-hover:scale-110',
-            tool.accentBadge
-          )}
-        >
+        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#89D4FF]/20 text-[#006BB8] transition-all duration-200 text-sm shadow-xs group-hover:scale-110 group-hover:bg-[#44ACFF] group-hover:text-white">
           →
         </span>
       </div>

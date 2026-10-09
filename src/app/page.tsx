@@ -26,11 +26,11 @@ export default function HomePage() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-28">
           <div className="text-center max-w-4xl mx-auto">
             {/* Top Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/80 border border-[#89D4FF]/60 px-4 py-1.5 text-xs sm:text-sm font-semibold text-slate-800 mb-8 shadow-xs backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/90 border border-white/80 px-4 py-1.5 text-xs sm:text-sm font-semibold text-slate-800 mb-8 shadow-xs backdrop-blur-md">
               <Sparkles className="h-4 w-4 text-[#44ACFF]" />
               <span>SaaS-Grade Image Suite</span>
-              <span className="hidden sm:inline text-slate-400">•</span>
-              <span className="hidden sm:inline text-[#A61E55] font-bold">100% Client-Side Privacy</span>
+              <span className="text-slate-400">•</span>
+              <span className="text-[#006BB8] font-bold">Privacy First</span>
             </div>
 
             {/* Main Headline */}
@@ -57,31 +57,31 @@ export default function HomePage() {
               </Link>
               <Link
                 href="/tools/compress"
-                className="px-6 py-3 rounded-2xl font-bold text-slate-800 bg-white/90 hover:bg-white border border-[#89D4FF]/60 shadow-xs hover:scale-[1.02] transition-all text-sm sm:text-base flex items-center gap-2"
+                className="px-6 py-3 rounded-2xl font-bold text-slate-800 bg-white/90 hover:bg-white border border-white/80 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:scale-[1.02] transition-all text-sm sm:text-base flex items-center gap-2"
               >
                 Kompres Gambar
               </Link>
             </div>
 
-            {/* Trust pills with varied palette backgrounds */}
+            {/* Trust pills with glowing white cards */}
             <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-3.5 sm:gap-4 max-w-3xl mx-auto text-left">
-              <div className="p-4 rounded-2xl border border-[#89D4FF]/80 bg-[#89D4FF]/30 backdrop-blur-md shadow-xs hover:scale-[1.02] transition-transform">
-                <Lock className="h-5 w-5 text-[#005B9C] mb-2" />
+              <div className="p-4 rounded-2xl bg-white/90 backdrop-blur-xl border border-white/80 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05),0_0_12px_rgba(255,255,255,0.9)_inset] hover:shadow-[0_8px_24px_-4px_rgba(68,172,255,0.15)] hover:border-[#89D4FF]/50 hover:scale-[1.02] transition-all">
+                <Lock className="h-5 w-5 text-[#44ACFF] mb-2" />
                 <p className="text-xs font-extrabold text-slate-900">Zero Uploads</p>
-                <p className="text-[11px] text-slate-600 font-medium">100% lokal di device</p>
+                <p className="text-[11px] text-slate-600 font-medium">Diproses lokal di device</p>
               </div>
-              <div className="p-4 rounded-2xl border border-[#FE9EC7]/80 bg-[#FE9EC7]/30 backdrop-blur-md shadow-xs hover:scale-[1.02] transition-transform">
-                <Zap className="h-5 w-5 text-[#A61E55] mb-2" />
+              <div className="p-4 rounded-2xl bg-white/90 backdrop-blur-xl border border-white/80 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05),0_0_12px_rgba(255,255,255,0.9)_inset] hover:shadow-[0_8px_24px_-4px_rgba(68,172,255,0.15)] hover:border-[#89D4FF]/50 hover:scale-[1.02] transition-all">
+                <Zap className="h-5 w-5 text-[#44ACFF] mb-2" />
                 <p className="text-xs font-extrabold text-slate-900">Super Cepat</p>
                 <p className="text-[11px] text-slate-600 font-medium">Tanpa antrean server</p>
               </div>
-              <div className="p-4 rounded-2xl border border-[#EADF60] bg-[#F9F6C4]/80 backdrop-blur-md shadow-xs hover:scale-[1.02] transition-transform">
-                <Monitor className="h-5 w-5 text-[#635700] mb-2" />
+              <div className="p-4 rounded-2xl bg-white/90 backdrop-blur-xl border border-white/80 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05),0_0_12px_rgba(255,255,255,0.9)_inset] hover:shadow-[0_8px_24px_-4px_rgba(68,172,255,0.15)] hover:border-[#89D4FF]/50 hover:scale-[1.02] transition-all">
+                <Monitor className="h-5 w-5 text-[#44ACFF] mb-2" />
                 <p className="text-xs font-extrabold text-slate-900">Bisa Offline</p>
                 <p className="text-[11px] text-slate-600 font-medium">Native Canvas & Web API</p>
               </div>
-              <div className="p-4 rounded-2xl border border-[#44ACFF]/70 bg-[#44ACFF]/25 backdrop-blur-md shadow-xs hover:scale-[1.02] transition-transform">
-                <Layers className="h-5 w-5 text-[#005B9C] mb-2" />
+              <div className="p-4 rounded-2xl bg-white/90 backdrop-blur-xl border border-white/80 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05),0_0_12px_rgba(255,255,255,0.9)_inset] hover:shadow-[0_8px_24px_-4px_rgba(68,172,255,0.15)] hover:border-[#89D4FF]/50 hover:scale-[1.02] transition-all">
+                <Layers className="h-5 w-5 text-[#44ACFF] mb-2" />
                 <p className="text-xs font-extrabold text-slate-900">Batch Ready</p>
                 <p className="text-[11px] text-slate-600 font-medium">Download ZIP instan</p>
               </div>
@@ -108,7 +108,7 @@ export default function HomePage() {
                     {category.key === 'analyze' && 'Inspeksi dan bandingkan gambar sebelum serta sesudah diedit.'}
                   </p>
                 </div>
-                <span className="text-xs font-bold px-3 py-1 rounded-full bg-[#89D4FF]/30 border border-[#89D4FF]/60 text-[#005B9C] self-start sm:self-auto">
+                <span className="text-xs font-bold px-3 py-1 rounded-full bg-white/90 border border-white/80 text-[#005B9C] shadow-xs self-start sm:self-auto">
                   {category.tools.length} Tools
                 </span>
               </div>
@@ -137,17 +137,17 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            <div className="p-7 rounded-3xl border border-[#89D4FF]/70 bg-gradient-to-br from-[#89D4FF]/30 via-white/90 to-[#44ACFF]/20 backdrop-blur-md shadow-sm hover:border-[#44ACFF] hover:-translate-y-1 transition-all">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#44ACFF] text-white shadow-md mb-4">
+            <div className="p-7 rounded-3xl bg-white/90 backdrop-blur-xl border border-white/80 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05),0_0_15px_rgba(255,255,255,0.9)_inset] hover:shadow-[0_12px_32px_-6px_rgba(68,172,255,0.18)] hover:border-[#89D4FF]/60 hover:-translate-y-1 transition-all">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#44ACFF] to-[#89D4FF] text-white shadow-md mb-4">
                 <Shield className="h-6 w-6" />
               </div>
-              <h4 className="text-xl font-bold mb-2 text-slate-900">100% Client-Side Privacy</h4>
+              <h4 className="text-xl font-bold mb-2 text-slate-900">Privasi Data Terjamin</h4>
               <p className="text-sm text-slate-600 leading-relaxed font-medium">
                 Seluruh pemrosesan berjalan di memori browser dengan Canvas API. Foto keluarga, dokumen, maupun aset rahasia tidak pernah meninggalkan komputermu.
               </p>
             </div>
 
-            <div className="p-7 rounded-3xl border border-[#FE9EC7]/70 bg-gradient-to-br from-[#FE9EC7]/30 via-white/90 to-[#F9F6C4]/50 backdrop-blur-md shadow-sm hover:border-[#FE9EC7] hover:-translate-y-1 transition-all">
+            <div className="p-7 rounded-3xl bg-white/90 backdrop-blur-xl border border-white/80 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05),0_0_15px_rgba(255,255,255,0.9)_inset] hover:shadow-[0_12px_32px_-6px_rgba(68,172,255,0.18)] hover:border-[#89D4FF]/60 hover:-translate-y-1 transition-all">
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#FE9EC7] to-[#E86D9F] text-white shadow-md mb-4">
                 <Zap className="h-6 w-6" />
               </div>
@@ -157,7 +157,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="p-7 rounded-3xl border border-[#EADF60] bg-gradient-to-br from-[#F9F6C4]/70 via-white/90 to-[#89D4FF]/30 backdrop-blur-md shadow-sm hover:border-[#44ACFF] hover:-translate-y-1 transition-all">
+            <div className="p-7 rounded-3xl bg-white/90 backdrop-blur-xl border border-white/80 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05),0_0_15px_rgba(255,255,255,0.9)_inset] hover:shadow-[0_12px_32px_-6px_rgba(68,172,255,0.18)] hover:border-[#89D4FF]/60 hover:-translate-y-1 transition-all">
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#44ACFF] to-[#89D4FF] text-white shadow-md mb-4">
                 <Cpu className="h-6 w-6" />
               </div>

@@ -41,9 +41,6 @@ export function Header() {
               <span className="font-accent text-2xl tracking-wide leading-none text-slate-900 group-hover:text-[#44ACFF] transition-colors">
                 Enopix
               </span>
-              <span className="text-[10px] font-bold text-[#006BB8] tracking-wider uppercase mt-0.5">
-                100% Client-Side
-              </span>
             </div>
           </Link>
 
