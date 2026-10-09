@@ -59,10 +59,10 @@ export function FileDropzone({ onFiles, multiple = true, maxFiles = 20, classNam
       <div
         {...getRootProps()}
         className={cn(
-          'relative flex flex-col items-center justify-center rounded-2xl border-2 border-dashed p-8 sm:p-12 transition-all duration-200 cursor-pointer group',
+          'relative flex flex-col items-center justify-center rounded-2xl border-2 border-dashed p-8 sm:p-12 transition-all duration-200 cursor-pointer group bg-card/60 backdrop-blur-sm',
           isDragActive
-            ? 'border-primary bg-primary/5 scale-[1.01]'
-            : 'border-border hover:border-primary/50 hover:bg-muted/50'
+            ? 'border-[#44ACFF] bg-[#89D4FF]/15 scale-[1.01]'
+            : 'border-border/80 hover:border-[#44ACFF]/60 hover:bg-[#89D4FF]/5'
         )}
       >
         <input {...getInputProps()} />
@@ -71,27 +71,27 @@ export function FileDropzone({ onFiles, multiple = true, maxFiles = 20, classNam
           className={cn(
             'flex h-16 w-16 items-center justify-center rounded-2xl mb-4 transition-all duration-200',
             isDragActive
-              ? 'bg-primary/15 scale-110'
-              : 'bg-muted group-hover:bg-primary/10 group-hover:scale-105'
+              ? 'bg-[#44ACFF]/20 scale-110'
+              : 'bg-muted group-hover:bg-[#89D4FF]/20 group-hover:scale-105'
           )}
         >
           {isDragActive ? (
-            <ImagePlus className="h-8 w-8 text-primary" />
+            <ImagePlus className="h-8 w-8 text-[#44ACFF]" />
           ) : (
-            <Upload className="h-8 w-8 text-muted-foreground group-hover:text-primary transition-colors" />
+            <Upload className="h-8 w-8 text-muted-foreground group-hover:text-[#44ACFF] transition-colors" />
           )}
         </div>
 
         <div className="text-center">
-          <p className="text-base font-semibold">
-            {isDragActive ? 'Drop your images here' : 'Drag & drop images here'}
+          <p className="text-base font-semibold text-foreground">
+            {isDragActive ? 'Lepaskan gambar di sini...' : 'Tarik & lepas gambar di sini'}
           </p>
           <p className="mt-1 text-sm text-muted-foreground">
-            or <span className="text-primary font-medium">browse files</span> from your computer
+            atau <span className="text-[#44ACFF] font-semibold underline underline-offset-2">pilih file</span> dari perangkatmu
           </p>
           <p className="mt-3 text-xs text-muted-foreground">
-            PNG, JPEG, WebP, GIF, BMP, SVG, AVIF • Max {formatFileSize(MAX_FILE_SIZE)} per file
-            {multiple && ` • Up to ${maxFiles} files`}
+            PNG, JPEG, WebP, GIF, BMP, SVG, AVIF • Maks {formatFileSize(MAX_FILE_SIZE)} per file
+            {multiple && ` • Hingga ${maxFiles} file`}
           </p>
         </div>
       </div>

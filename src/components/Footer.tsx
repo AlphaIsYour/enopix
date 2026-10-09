@@ -12,9 +12,19 @@ export function Footer() {
             </span>
           </div>
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
-            <span className="flex items-center gap-1">
-              Built with <Heart className="h-3.5 w-3.5 text-red-500 fill-red-500" /> by Enopix
+            <span className="flex items-center gap-1.5">
+              Built with <Heart className="h-3.5 w-3.5 text-[#FE9EC7] fill-[#FE9EC7]" /> for creators by{' '}
+              <span className="font-accent text-base text-foreground">Enopix</span>
             </span>
+            <span className="text-muted-foreground/60">•</span>
+            <a
+              href="https://github.com/AlphaIsYour/enopix"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-semibold text-[#44ACFF] hover:underline"
+            >
+              GitHub (MIT)
+            </a>
           </div>
         </div>
       </div>

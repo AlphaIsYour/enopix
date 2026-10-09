@@ -1,22 +1,28 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #fafbfe;
   --foreground: #0f172a;
   --card: #ffffff;
   --card-foreground: #0f172a;
-  --primary: #6366f1;
+  --primary: #44ACFF;
   --primary-foreground: #ffffff;
-  --secondary: #f1f5f9;
-  --secondary-foreground: #0f172a;
-  --muted: #f1f5f9;
+  --secondary: #F9F6C4;
+  --secondary-foreground: #1e293b;
+  --muted: #f0f7ff;
   --muted-foreground: #64748b;
-  --accent: #f1f5f9;
-  --accent-foreground: #0f172a;
+  --accent: #FE9EC7;
+  --accent-foreground: #1e293b;
   --destructive: #ef4444;
   --border: #e2e8f0;
-  --ring: #6366f1;
-  --radius: 0.75rem;
+  --ring: #44ACFF;
+  --radius: 1rem;
+
+  /* Enopix Brand Palette */
+  --brand-pink: #FE9EC7;
+  --brand-yellow: #F9F6C4;
+  --brand-sky: #89D4FF;
+  --brand-blue: #44ACFF;
 }
 
 @theme inline {
@@ -35,27 +41,38 @@
   --color-destructive: var(--destructive);
   --color-border: var(--border);
   --color-ring: var(--ring);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-brand-pink: var(--brand-pink);
+  --color-brand-yellow: var(--brand-yellow);
+  --color-brand-sky: var(--brand-sky);
+  --color-brand-blue: var(--brand-blue);
+
+  --font-sans: var(--font-sans);
+  --font-accent: var(--font-accent);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0f;
-    --foreground: #e2e8f0;
-    --card: #111827;
-    --card-foreground: #e2e8f0;
-    --primary: #818cf8;
-    --primary-foreground: #0f172a;
-    --secondary: #1e293b;
-    --secondary-foreground: #e2e8f0;
-    --muted: #1e293b;
-    --muted-foreground: #94a3b8;
-    --accent: #1e293b;
-    --accent-foreground: #e2e8f0;
-    --destructive: #f87171;
-    --border: #1e293b;
-    --ring: #818cf8;
+    --background: #0B0F19;
+    --foreground: #F8FAFC;
+    --card: #121827;
+    --card-foreground: #F8FAFC;
+    --primary: #44ACFF;
+    --primary-foreground: #0B0F19;
+    --secondary: #1E293B;
+    --secondary-foreground: #F8FAFC;
+    --muted: #162032;
+    --muted-foreground: #94A3B8;
+    --accent: #FE9EC7;
+    --accent-foreground: #0B0F19;
+    --destructive: #F87171;
+    --border: #1E293B;
+    --ring: #44ACFF;
+
+    --brand-pink: #FE9EC7;
+    --brand-yellow: #F9F6C4;
+    --brand-sky: #89D4FF;
+    --brand-blue: #44ACFF;
   }
 }
 
@@ -69,6 +86,11 @@ body {
   font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.font-accent {
+  font-family: var(--font-accent), "Comic Sans MS", cursive, sans-serif;
+  letter-spacing: 0.02em;
 }
 
 /* Scrollbar styling */

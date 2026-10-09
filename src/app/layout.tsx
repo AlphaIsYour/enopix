@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const fontSans = localFont({
+  src: "../../public/fonts/font4.woff2",
+  variable: "--font-sans",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const fontAccent = localFont({
+  src: "../../public/fonts/Coffespark.ttf",
+  variable: "--font-accent",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -50,6 +52,11 @@ export const metadata: Metadata = {
     description:
       "Free, browser-based image processing. All processed locally. Zero uploads.",
   },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/enopix.png",
+  },
   robots: { index: true, follow: true },
 };
 
@@ -61,9 +68,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${fontSans.variable} ${fontAccent.variable} font-sans h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col font-sans">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

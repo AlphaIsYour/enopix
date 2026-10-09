@@ -39,29 +39,36 @@ export function ToolCard({ tool, index = 0 }: ToolCardProps) {
   return (
     <Link
       href={`/tools/${tool.slug}`}
-      className="group relative rounded-2xl border border-border/50 bg-card p-6 transition-all duration-200 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-0.5 animate-slide-up"
-      style={{ animationDelay: `${index * 50}ms`, animationFillMode: 'backwards' }}
+      className="group relative flex flex-col justify-between rounded-2xl border border-border/70 bg-card p-6 transition-all duration-300 hover:border-[#44ACFF]/50 hover:shadow-xl hover:shadow-[#44ACFF]/10 hover:-translate-y-1 animate-slide-up overflow-hidden"
+      style={{ animationDelay: `${index * 40}ms`, animationFillMode: 'backwards' }}
     >
-      <div
-        className={cn(
-          'flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br shadow-lg mb-4',
-          tool.color
-        )}
-      >
-        <Icon className="h-6 w-6 text-white" />
+      {/* Top accent gradient indicator */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#FE9EC7] via-[#89D4FF] to-[#44ACFF] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+      <div>
+        <div
+          className={cn(
+            'flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br shadow-md group-hover:scale-105 group-hover:rotate-1 transition-all duration-300 mb-4',
+            tool.color
+          )}
+        >
+          <Icon className="h-6 w-6 text-white drop-shadow-sm" />
+        </div>
+
+        <h3 className="text-lg font-bold mb-1.5 group-hover:text-[#44ACFF] transition-colors">
+          {tool.name}
+        </h3>
+
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          {tool.description}
+        </p>
       </div>
 
-      <h3 className="text-lg font-semibold mb-1.5 group-hover:text-primary transition-colors">
-        {tool.name}
-      </h3>
-
-      <p className="text-sm text-muted-foreground leading-relaxed">
-        {tool.description}
-      </p>
-
-      <div className="mt-4 flex items-center gap-1.5 text-xs font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-        <span>Open tool</span>
-        <span className="transition-transform group-hover:translate-x-0.5">→</span>
+      <div className="mt-5 pt-3 border-t border-border/40 flex items-center justify-between text-xs font-semibold text-[#44ACFF]">
+        <span className="group-hover:translate-x-0.5 transition-transform duration-200">Buka Tool</span>
+        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#89D4FF]/20 group-hover:bg-[#44ACFF] group-hover:text-white transition-all duration-200 text-xs">
+          →
+        </span>
       </div>
     </Link>
   );
