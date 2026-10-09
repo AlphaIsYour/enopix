@@ -30,7 +30,7 @@ export function Header() {
             </div>
             <div className="flex flex-col">
               <span className="text-base font-bold tracking-tight leading-none">
-                Eno Image Tools
+                Enopix
               </span>
               <span className="text-[10px] font-medium text-muted-foreground tracking-wide uppercase flex items-center gap-1">
                 <Shield className="h-2.5 w-2.5" />

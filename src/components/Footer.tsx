@@ -13,7 +13,7 @@ export function Footer() {
           </div>
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
             <span className="flex items-center gap-1">
-              Built with <Heart className="h-3.5 w-3.5 text-red-500 fill-red-500" /> by Eno Tools
+              Built with <Heart className="h-3.5 w-3.5 text-red-500 fill-red-500" /> by Enopix
             </span>
           </div>
         </div>

@@ -506,7 +506,7 @@ export function downloadBlob(blob: Blob, filename: string): void {
   URL.revokeObjectURL(url);
 }
 
-export async function downloadAllAsZip(images: ProcessedImage[], zipName: string = 'eno-images.zip'): Promise<void> {
+export async function downloadAllAsZip(images: ProcessedImage[], zipName: string = 'enopix-images.zip'): Promise<void> {
   const JSZip = (await import('jszip')).default;
   const zip = new JSZip();
 

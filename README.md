@@ -1,8 +1,8 @@
-# Eno Image Tools
+# Enopix
 
 <div align="center">
 
-[![CI](https://github.com/AlphaIsYour/eno-image-tools/actions/workflows/ci.yml/badge.svg)](https://github.com/AlphaIsYour/eno-image-tools/actions/workflows/ci.yml)
+[![CI](https://github.com/AlphaIsYour/enopix/actions/workflows/ci.yml/badge.svg)](https://github.com/AlphaIsYour/enopix/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript)](https://www.typescriptlang.org/)
@@ -69,8 +69,8 @@ Resize, crop, compress, convert, strip metadata, split into grids, generate soci
 
 ```bash
 # Clone the repository
-git clone https://github.com/AlphaIsYour/eno-image-tools.git
-cd eno-image-tools
+git clone https://github.com/AlphaIsYour/enopix.git
+cd enopix
 
 # Install dependencies
 npm ci
@@ -180,7 +180,7 @@ All image processing uses the browser's **Canvas API** and **Blob API**:
 Contributions of all kinds are welcome! Whether you are writing code, fixing documentation, reporting issues, or suggesting new presets:
 
 1. Read our [Contributing Guidelines](CONTRIBUTING.md) to get set up.
-2. Check out [`good first issue`](https://github.com/AlphaIsYour/eno-image-tools/labels/good%20first%20issue) issues to get started.
+2. Check out [`good first issue`](https://github.com/AlphaIsYour/enopix/labels/good%20first%20issue) issues to get started.
 3. Review our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ---
@@ -198,7 +198,7 @@ Want to see your name here? Check out [CONTRIBUTING.md](CONTRIBUTING.md) and pic
 
 ## ☕ Support
 
-Eno Image Tools is completely free and open-source software. If this project helps you or saves you time, you can optionally support ongoing maintenance and feature development:
+Enopix is completely free and open-source software. If this project helps you or saves you time, you can optionally support ongoing maintenance and feature development:
 
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Donate-yellow.svg?logo=buy-me-a-coffee)](https://buymeacoffee.com/enoalph)
 

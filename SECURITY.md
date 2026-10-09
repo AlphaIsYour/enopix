@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-We actively maintain the latest release of Eno Image Tools.
+We actively maintain the latest release of Enopix.
 
 | Version | Supported          |
 | ------- | ------------------ |
@@ -10,7 +10,7 @@ We actively maintain the latest release of Eno Image Tools.
 
 ## Core Security & Privacy Architecture
 
-Eno Image Tools is strictly designed as an **offline-first, zero-upload** application.
+Enopix is strictly designed as an **offline-first, zero-upload** application.
 - All image decoding, transformation, cropping, and encoding operations are executed purely client-side within the user's browser sandbox using HTML5 Canvas and Blob APIs.
 - No image binary, canvas data, or EXIF metadata is ever sent to any remote server or third-party service.
 
@@ -27,7 +27,7 @@ If you discover a security vulnerability or potential privacy leak, please do **
 
 Instead, please send an email directly to the maintainer:
 - **Email**: [alphrenoorz@gmail.com](mailto:alphrenoorz@gmail.com)
-- **Subject line**: `[SECURITY] Vulnerability in Eno Image Tools`
+- **Subject line**: `[SECURITY] Vulnerability in Enopix`
 
 Please include:
 - A description of the vulnerability and attack vector

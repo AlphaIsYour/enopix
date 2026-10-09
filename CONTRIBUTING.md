@@ -1,6 +1,6 @@
-# Contributing to Eno Image Tools
+# Contributing to Enopix
 
-Welcome! We are excited that you want to contribute to **Eno Image Tools**. Whether you are fixing a typo, resolving a bug, writing tests, or adding a new client-side tool, your contributions are warmly welcomed!
+Welcome! We are excited that you want to contribute to **Enopix**. Whether you are fixing a typo, resolving a bug, writing tests, or adding a new client-side tool, your contributions are warmly welcomed!
 
 This project is built on a core philosophy: **100% privacy-first, client-side processing**. No user image ever leaves the browser. Any contribution must strictly preserve this guarantee.
 
@@ -28,7 +28,7 @@ We are committed to providing a welcoming, inclusive, and harassment-free enviro
 ## 🎯 How Can I Contribute?
 
 You do not need to be an expert in graphics programming or Next.js to make an impact:
-- **Good First Issues**: Look for issues tagged [`good first issue`](https://github.com/AlphaIsYour/eno-image-tools/labels/good%20first%20issue). These are small, self-contained tasks designed specifically for new contributors.
+- **Good First Issues**: Look for issues tagged [`good first issue`](https://github.com/AlphaIsYour/enopix/labels/good%20first%20issue). These are small, self-contained tasks designed specifically for new contributors.
 - **Documentation**: Improve explanations, fix grammar, document edge cases, or add clear usage examples.
 - **Bug Fixes**: Help squash browser inconsistencies, handle edge-case images, or fix canvas rendering glitches.
 - **UI & Accessibility**: Improve keyboard navigation, high-contrast states, and mobile touch interactions.
@@ -75,13 +75,13 @@ We want you to grow as a long-term collaborator:
 
 1. **Fork and Clone**
    ```bash
-   git clone https://github.com/<your-username>/eno-image-tools.git
-   cd eno-image-tools
+   git clone https://github.com/<your-username>/enopix.git
+   cd enopix
    ```
 
 2. **Add Upstream Remote**
    ```bash
-   git remote add upstream https://github.com/AlphaIsYour/eno-image-tools.git
+   git remote add upstream https://github.com/AlphaIsYour/enopix.git
    ```
 
 3. **Install Dependencies**
@@ -151,7 +151,7 @@ We want you to grow as a long-term collaborator:
    ```bash
    git push origin <your-branch-name>
    ```
-2. Open a Pull Request targeting `master` of `AlphaIsYour/eno-image-tools`.
+2. Open a Pull Request targeting `master` of `AlphaIsYour/enopix`.
 3. Complete the PR template description:
    - Reference the issue being solved (`Fixes #123`).
    - Describe what changed and include screenshots/GIFs for UI changes.
@@ -162,8 +162,8 @@ We want you to grow as a long-term collaborator:
 
 ## 🙋 Reporting Issues & Getting Help
 
-- **Found a bug?** Check existing issues first. If it has not been reported, open a [Bug Report](https://github.com/AlphaIsYour/eno-image-tools/issues/new?template=bug_report.yml).
-- **Have an idea?** Open a [Feature Request](https://github.com/AlphaIsYour/eno-image-tools/issues/new?template=feature_request.yml).
+- **Found a bug?** Check existing issues first. If it has not been reported, open a [Bug Report](https://github.com/AlphaIsYour/enopix/issues/new?template=bug_report.yml).
+- **Have an idea?** Open a [Feature Request](https://github.com/AlphaIsYour/enopix/issues/new?template=feature_request.yml).
 - **Need help or have questions?** Feel free to start a discussion or leave a comment on the relevant issue. We are here to help you succeed!
 
 ---

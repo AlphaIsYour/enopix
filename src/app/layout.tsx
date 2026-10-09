@@ -16,12 +16,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Eno Image Tools — Privacy-First Image Processing",
-    template: "%s | Eno Image Tools",
+    default: "Enopix — Privacy-First Image Processing",
+    template: "%s | Enopix",
   },
   description:
     "Free, browser-based image processing suite. Resize, crop, compress, convert, remove metadata, split grids, generate social presets & favicons — all locally. Zero uploads.",
   keywords: [
+    "enopix",
     "image tools",
     "image resize",
     "image compress",
@@ -34,18 +35,18 @@ export const metadata: Metadata = {
     "image crop",
     "grid split",
   ],
-  authors: [{ name: "Eno Tools" }],
+  authors: [{ name: "Enopix" }],
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Eno Image Tools",
-    title: "Eno Image Tools — Privacy-First Image Processing",
+    siteName: "Enopix",
+    title: "Enopix — Privacy-First Image Processing",
     description:
       "Free, browser-based image processing. Resize, crop, compress, convert, and more — all processed locally. Zero uploads.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Eno Image Tools — Privacy-First Image Processing",
+    title: "Enopix — Privacy-First Image Processing",
     description:
       "Free, browser-based image processing. All processed locally. Zero uploads.",
   },
