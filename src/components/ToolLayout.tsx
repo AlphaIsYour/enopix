@@ -17,7 +17,7 @@ export function ToolLayout({ title, description, icon, color, children }: ToolLa
   return (
     <div className="min-h-[calc(100vh-4rem)]">
       {/* Hero */}
-      <div className="border-b border-border/60 bg-gradient-to-b from-[#89D4FF]/5 via-transparent to-transparent">
+      <div className="border-b border-[#89D4FF]/30 bg-white/60 backdrop-blur-md">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
           <Link
             href="/"

@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Shield } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import enopixLogo from '../../public/enopix.png';
@@ -22,43 +22,42 @@ export function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-[#89D4FF]/40 bg-white/85 backdrop-blur-xl shadow-xs">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl overflow-hidden ring-2 ring-[#44ACFF]/30 shadow-sm group-hover:ring-[#FE9EC7]/60 group-hover:scale-105 transition-all bg-card/80 p-0.5">
+            <div className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl overflow-hidden shadow-xs ring-1 ring-[#89D4FF]/50 bg-white p-0.5 group-hover:scale-105 transition-transform">
               <Image
                 src={enopixLogo}
                 alt="Enopix Logo"
-                width={40}
-                height={40}
-                className="h-full w-full object-contain rounded-lg"
+                width={36}
+                height={36}
+                className="h-full w-full object-contain rounded-xl"
                 priority
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-accent text-2xl tracking-wide leading-none text-foreground group-hover:text-[#44ACFF] transition-colors">
+              <span className="font-accent text-2xl tracking-wide leading-none text-slate-900 group-hover:text-[#44ACFF] transition-colors">
                 Enopix
               </span>
-              <span className="text-[10px] font-semibold text-muted-foreground tracking-wider uppercase flex items-center gap-1 mt-0.5">
-                <Shield className="h-2.5 w-2.5 text-[#44ACFF]" />
+              <span className="text-[10px] font-bold text-[#006BB8] tracking-wider uppercase mt-0.5">
                 100% Client-Side
               </span>
             </div>
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden md:flex items-center gap-1.5">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'px-3 py-1.5 text-sm font-medium rounded-lg transition-colors',
+                  'px-3.5 py-1.5 text-sm font-semibold rounded-xl transition-all',
                   pathname === link.href
-                    ? 'bg-primary/10 text-primary'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                    ? 'bg-[#44ACFF]/15 text-[#006BB8] shadow-xs'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-[#89D4FF]/20'
                 )}
               >
                 {link.label}

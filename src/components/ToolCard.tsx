@@ -39,34 +39,66 @@ export function ToolCard({ tool, index = 0 }: ToolCardProps) {
   return (
     <Link
       href={`/tools/${tool.slug}`}
-      className="group relative flex flex-col justify-between rounded-2xl border border-border/70 bg-card p-6 transition-all duration-300 hover:border-[#44ACFF]/50 hover:shadow-xl hover:shadow-[#44ACFF]/10 hover:-translate-y-1 animate-slide-up overflow-hidden"
+      className={cn(
+        'group relative flex flex-col justify-between rounded-3xl border p-6 sm:p-7 backdrop-blur-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 animate-slide-up overflow-hidden shadow-sm',
+        tool.cardBg,
+        tool.cardBorder
+      )}
       style={{ animationDelay: `${index * 40}ms`, animationFillMode: 'backwards' }}
     >
       {/* Top accent gradient indicator */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#FE9EC7] via-[#89D4FF] to-[#44ACFF] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div
+        className={cn(
+          'absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r opacity-70 group-hover:opacity-100 transition-opacity duration-300',
+          tool.color
+        )}
+      />
 
       <div>
-        <div
-          className={cn(
-            'flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br shadow-md group-hover:scale-105 group-hover:rotate-1 transition-all duration-300 mb-4',
-            tool.color
-          )}
-        >
-          <Icon className="h-6 w-6 text-white drop-shadow-sm" />
+        <div className="flex items-center justify-between mb-4">
+          <div
+            className={cn(
+              'flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br shadow-md group-hover:scale-110 group-hover:rotate-2 transition-all duration-300 text-white',
+              tool.color
+            )}
+          >
+            <Icon className="h-6 w-6 text-white drop-shadow-sm" />
+          </div>
+
+          <span
+            className={cn(
+              'text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-xs',
+              tool.accentBadge
+            )}
+          >
+            {tool.category}
+          </span>
         </div>
 
-        <h3 className="text-lg font-bold mb-1.5 group-hover:text-[#44ACFF] transition-colors">
+        <h3 className="text-xl font-extrabold mb-2 text-foreground group-hover:translate-x-0.5 transition-transform">
           {tool.name}
         </h3>
 
-        <p className="text-sm text-muted-foreground leading-relaxed">
+        <p className="text-sm text-foreground/80 leading-relaxed font-medium">
           {tool.description}
         </p>
       </div>
 
-      <div className="mt-5 pt-3 border-t border-border/40 flex items-center justify-between text-xs font-semibold text-[#44ACFF]">
-        <span className="group-hover:translate-x-0.5 transition-transform duration-200">Buka Tool</span>
-        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#89D4FF]/20 group-hover:bg-[#44ACFF] group-hover:text-white transition-all duration-200 text-xs">
+      <div className="mt-6 pt-3.5 border-t border-black/8 flex items-center justify-between text-xs font-bold">
+        <span
+          className={cn(
+            'group-hover:translate-x-1 transition-transform duration-200',
+            tool.buttonText
+          )}
+        >
+          Buka Tool
+        </span>
+        <span
+          className={cn(
+            'flex h-7 w-7 items-center justify-center rounded-full transition-all duration-200 text-sm shadow-xs group-hover:scale-110',
+            tool.accentBadge
+          )}
+        >
           →
         </span>
       </div>

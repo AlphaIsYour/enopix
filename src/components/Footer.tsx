@@ -2,7 +2,8 @@ import { Shield, Heart } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/50 bg-muted/30">
+    <footer className="border-t border-[#89D4FF]/30 bg-white/70 backdrop-blur-xl">
+      <div className="h-[2px] w-full bg-gradient-to-r from-[#44ACFF] via-[#89D4FF] via-[#F9F6C4] to-[#FE9EC7]" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">

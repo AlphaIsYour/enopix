@@ -51,37 +51,21 @@
   --font-accent: var(--font-accent);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0B0F19;
-    --foreground: #F8FAFC;
-    --card: #121827;
-    --card-foreground: #F8FAFC;
-    --primary: #44ACFF;
-    --primary-foreground: #0B0F19;
-    --secondary: #1E293B;
-    --secondary-foreground: #F8FAFC;
-    --muted: #162032;
-    --muted-foreground: #94A3B8;
-    --accent: #FE9EC7;
-    --accent-foreground: #0B0F19;
-    --destructive: #F87171;
-    --border: #1E293B;
-    --ring: #44ACFF;
-
-    --brand-pink: #FE9EC7;
-    --brand-yellow: #F9F6C4;
-    --brand-sky: #89D4FF;
-    --brand-blue: #44ACFF;
-  }
-}
-
 * {
   border-color: var(--border);
 }
 
 body {
-  background: var(--background);
+  background-color: #fcfdfe;
+  background-image:
+    radial-gradient(ellipse 70% 50% at 8% 8%, rgba(254, 158, 199, 0.35) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at 92% 10%, rgba(137, 212, 255, 0.4) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 55% at 50% 38%, rgba(249, 246, 196, 0.5) 0%, transparent 65%),
+    radial-gradient(ellipse 70% 50% at 12% 75%, rgba(137, 212, 255, 0.35) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at 88% 82%, rgba(254, 158, 199, 0.35) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 55% at 50% 95%, rgba(68, 172, 255, 0.28) 0%, transparent 65%);
+  background-attachment: fixed;
+  background-size: 100% 100%;
   color: var(--foreground);
   font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
   -webkit-font-smoothing: antialiased;

@@ -7,6 +7,10 @@ export interface ToolDef {
   icon: string;
   category: 'resize' | 'convert' | 'optimize' | 'generate' | 'analyze';
   color: string;
+  cardBg: string;
+  cardBorder: string;
+  accentBadge: string;
+  buttonText: string;
 }
 
 export const TOOLS: ToolDef[] = [
@@ -17,6 +21,10 @@ export const TOOLS: ToolDef[] = [
     icon: 'Maximize2',
     category: 'resize',
     color: 'from-[#44ACFF] to-[#89D4FF]',
+    cardBg: 'bg-[#89D4FF]/30',
+    cardBorder: 'border-[#89D4FF]/80 hover:border-[#44ACFF]',
+    accentBadge: 'bg-[#44ACFF]/20 text-[#005B9C]',
+    buttonText: 'text-[#005B9C]',
   },
   {
     slug: 'crop',
@@ -25,6 +33,10 @@ export const TOOLS: ToolDef[] = [
     icon: 'Crop',
     category: 'resize',
     color: 'from-[#FE9EC7] to-[#44ACFF]',
+    cardBg: 'bg-[#FE9EC7]/30',
+    cardBorder: 'border-[#FE9EC7]/80 hover:border-[#FE9EC7]',
+    accentBadge: 'bg-[#FE9EC7]/30 text-[#A61E55]',
+    buttonText: 'text-[#A61E55]',
   },
   {
     slug: 'compress',
@@ -32,7 +44,11 @@ export const TOOLS: ToolDef[] = [
     description: 'Reduce file size intelligently with adjustable visual quality for JPEG, WebP, and PNG.',
     icon: 'Minimize2',
     category: 'optimize',
-    color: 'from-[#89D4FF] to-[#44ACFF]',
+    color: 'from-[#44ACFF] to-[#F9F6C4]',
+    cardBg: 'bg-[#F9F6C4]/80',
+    cardBorder: 'border-[#EADF60] hover:border-[#D1C532]',
+    accentBadge: 'bg-[#EFE887] text-[#635700]',
+    buttonText: 'text-[#635700]',
   },
   {
     slug: 'convert',
@@ -41,6 +57,10 @@ export const TOOLS: ToolDef[] = [
     icon: 'RefreshCw',
     category: 'convert',
     color: 'from-[#FE9EC7] to-[#F9F6C4]',
+    cardBg: 'bg-gradient-to-br from-[#FE9EC7]/35 via-white/80 to-[#F9F6C4]/60',
+    cardBorder: 'border-[#FE9EC7]/70 hover:border-[#FE9EC7]',
+    accentBadge: 'bg-[#FE9EC7]/30 text-[#A61E55]',
+    buttonText: 'text-[#A61E55]',
   },
   {
     slug: 'metadata',
@@ -49,6 +69,10 @@ export const TOOLS: ToolDef[] = [
     icon: 'Shield',
     category: 'optimize',
     color: 'from-[#FE9EC7] via-[#89D4FF] to-[#44ACFF]',
+    cardBg: 'bg-gradient-to-br from-[#89D4FF]/35 via-white/80 to-[#FE9EC7]/30',
+    cardBorder: 'border-[#89D4FF]/70 hover:border-[#44ACFF]',
+    accentBadge: 'bg-[#89D4FF]/30 text-[#005B9C]',
+    buttonText: 'text-[#005B9C]',
   },
   {
     slug: 'grid-split',
@@ -57,6 +81,10 @@ export const TOOLS: ToolDef[] = [
     icon: 'Grid3X3',
     category: 'resize',
     color: 'from-[#89D4FF] via-[#F9F6C4] to-[#FE9EC7]',
+    cardBg: 'bg-gradient-to-br from-[#F9F6C4]/70 via-white/80 to-[#89D4FF]/35',
+    cardBorder: 'border-[#89D4FF]/60 hover:border-[#44ACFF]',
+    accentBadge: 'bg-[#89D4FF]/30 text-[#005B9C]',
+    buttonText: 'text-[#005B9C]',
   },
   {
     slug: 'social-presets',
@@ -65,6 +93,10 @@ export const TOOLS: ToolDef[] = [
     icon: 'Share2',
     category: 'resize',
     color: 'from-[#FE9EC7] to-[#89D4FF]',
+    cardBg: 'bg-[#FE9EC7]/30',
+    cardBorder: 'border-[#FE9EC7]/80 hover:border-[#FE9EC7]',
+    accentBadge: 'bg-[#FE9EC7]/30 text-[#A61E55]',
+    buttonText: 'text-[#A61E55]',
   },
   {
     slug: 'favicon',
@@ -73,6 +105,10 @@ export const TOOLS: ToolDef[] = [
     icon: 'Star',
     category: 'generate',
     color: 'from-[#44ACFF] to-[#F9F6C4]',
+    cardBg: 'bg-gradient-to-br from-[#44ACFF]/25 via-white/80 to-[#F9F6C4]/65',
+    cardBorder: 'border-[#44ACFF]/60 hover:border-[#44ACFF]',
+    accentBadge: 'bg-[#44ACFF]/25 text-[#005B9C]',
+    buttonText: 'text-[#005B9C]',
   },
   {
     slug: 'compare',
@@ -81,6 +117,10 @@ export const TOOLS: ToolDef[] = [
     icon: 'ArrowLeftRight',
     category: 'analyze',
     color: 'from-[#44ACFF] via-[#FE9EC7] to-[#89D4FF]',
+    cardBg: 'bg-gradient-to-br from-[#89D4FF]/35 via-white/80 to-[#FE9EC7]/25',
+    cardBorder: 'border-[#44ACFF]/60 hover:border-[#44ACFF]',
+    accentBadge: 'bg-[#44ACFF]/25 text-[#005B9C]',
+    buttonText: 'text-[#005B9C]',
   },
 ];
 
